@@ -14,8 +14,11 @@ def window_transform_series(series, window_size):
     y = []
 
     # reshape each 
+    for i in range(0,len(series)-window_size):
+        X.append(series[i:i+window_size])
+        y.append(series[i+window_size])
     X = np.asarray(X)
-    X.shape = (np.shape(X)[0:2])
+    X.shape = (np.shape(X)[0:2]) #2D shape of (P-T) input sequences
     y = np.asarray(y)
     y.shape = (len(y),1)
 
