@@ -19,3 +19,8 @@ ENV/
 
 #temp files
 *~
+
+#submission files
+*.zip
+*.json
+*.html
