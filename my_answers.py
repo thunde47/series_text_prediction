@@ -36,12 +36,14 @@ def build_part1_RNN(window_size):
 def cleaned_text(text):
    
     punctuation = ['!', ',', '.', ':', ';', '?', ' ']
+    alphabets=[ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+    					'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
     clean_text = ''
 
     for character in text:
-       if character in punctuation or character.isalpha():
+       if character in punctuation or character in alphabets:
            clean_text+=character
-    clean_text = clean_text.replace(u'à',' ').replace(u'â',' ').replace(u'è',' ').replace(u'é',' ')
+    #clean_text = clean_text.replace(u'à',' ').replace(u'â',' ').replace(u'è',' ').replace(u'é',' ')
     return clean_text
 
 ### TODO: fill out the function below that transforms the input text and window-size into a set of input/output pairs for use with our RNN model
